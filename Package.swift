@@ -28,19 +28,19 @@ let package = Package(
       )
     ],
     dependencies: [
-      .package(url: "https://github.com/IBM-Swift/Kitura.git", .upToNextMinor(from: "2.0.0")),
+      .package(url: "https://github.com/KyeMaloy97/SwiftMetrics", .branch("swift4_BAM_Test")),
       .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", .upToNextMajor(from: "1.7.1")),
-      .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", .upToNextMajor(from: "5.0.0")),
+      .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", .upToNextMajor(from: "6.0.0")),
       .package(url: "https://github.com/IBM-Swift/Health.git", .upToNextMajor(from: "1.0.0"))
     ],
     targets: [
       .target(
         name: "Kitura-Starter",
-        dependencies: ["Kitura", "HeliumLogger", "Controller"]
+        dependencies: ["SwiftMetrics", "HeliumLogger", "Controller"]
       ),
       .target(
         name: "Controller",
-        dependencies: ["Kitura", "CloudEnvironment", "Health"]
+        dependencies: ["SwiftMetrics", "CloudEnvironment", "Health"]
       ),
       .testTarget(
         name: "ControllerTests",
